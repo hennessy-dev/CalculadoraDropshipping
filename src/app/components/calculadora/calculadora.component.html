@@ -1,0 +1,168 @@
+<div class="md:flex mx-4 mt-4 md:mx-10 md:my-10 flex-row md:flex-row mt-{143px}">
+
+  <div
+    class="md:mx-2 items-center basis-1/2 flex flex-row my-10 max-h-screen bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+    <div>
+      <h1 class="font-bold mb-8 text-white">Datos del Producto</h1>
+
+      <div class="mb-4">
+        <label class="block text-white text-sm font-bold mb-2" for="nombre">Producto</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="nombre" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-white text-sm font-bold mb-2" for="precio">Precio de Venta</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          type="number" id="precio" placeholder="" [(ngModel)]="precioProducto">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-white text-sm font-bold mb-2" for="precioProveedor">Precio de Proveedor</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          type="number" id="precioProveedor" placeholder="precio de proveedor" [(ngModel)]="precioProveedor">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-white text-sm font-bold mb-2" for="valorFlete">Flete</label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          type="number" id="valorFlete" placeholder="costo del flete" [(ngModel)]="flete">
+      </div>
+
+      <button id="calcularBtn" class="bg-lime-500 text-white px-4 py-2 rounded"
+        (click)="calcularUtilidad()">Calcular</button>
+    </div>
+
+    <!-- <div>
+      <form class="max-w-md mx-auto">
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-5 group">
+              <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+              <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-5 group">
+              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+              <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
+          </div>
+        </div>
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+      </form>      
+    </div> -->
+
+  </div>
+
+
+
+  <div id="resultado"
+    class="md:mx-2 grid md:grid-cols-2 gap-5 grid-cols-1 basis-1/2 flex-col my-10 max-h-full bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+    <div class="container flex flex-col items-center justify-evenly">
+
+      <p class="font-extrabold text-white text-2xl mb-2">
+        Producto
+      </p>
+B
+      <div class="bg-green-500 w-4/5 h-5/6 rounded-xl flex items-center flex-col justify-around py-5 px-5">
+        <span class="bg-black px-2 py-2 text-xl text-white font-bold rounded-xl">
+          Nombre: {{ nombre }}
+        </span>
+        <span class="text-xl text-white font-bold">
+          Precio: {{ precioProducto | currency:'$':'symbol':'1.0-0' }}
+        </span>
+        <span class="text-xl text-white font-bold">
+          Proveedor: {{ precioProveedor | currency:'$':'symbol':'1.0-0' }}
+        </span>
+        <span class="text-xl text-white font-bold">
+          Flete: {{ flete | currency:'$':'symbol':'1.0-0' }}
+        </span>
+        <span class="text-xl text-white font-bold">
+          Utilidad: {{ precioProducto * utilidad | currency:'$':'symbol':'1.0-0'}}
+        </span>
+      </div>
+
+    </div>
+
+    <div class="container flex flex-col items-center justify-evenly">
+
+      <p class="font-extrabold text-white text-2xl mb-2 text-center">
+        Margen de Utilidad
+      </p>
+
+      <div
+        class="bg-lime-500 text-white md:w-1/2 md:h-2/3 rounded-xl flex items-center py-4 px-5 flex-col justify-around">
+        <span class="text-5xl font-bold">
+          {{ utilidad * 100 | number: '1.1-2'}}%
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="container md:col-span-2">
+
+      <div class="relative overflow-x-auto shadow-md rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 ">
+          <thead class="text-xs text-white uppercase bg-lime-900 dark:text-white">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-center">
+                Facturacion Estimada
+              </th>
+              <th scope="col" class="px-6 py-3 text-center">
+                Ventas Necesarias
+              </th>
+              <th scope="col" class="px-6 py-3 text-center">
+                Utilidad Estimada
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            @for (salario of salarios; track $index) {
+            <tr class="bg-lime-500 border-b border-black">
+              <th scope="row" class="text-sm md:text-lg px-6 py-4 font-medium text-blue-50 whitespace-nowrap dark:text-blue-100">
+                {{ salario | currency:'$':'symbol':'1.0-0' }}
+              </th>
+              <td class="text-sm md:text-lg px-6 py-4">
+                {{ salario / precioProducto | roundUp }}
+              </td>
+              <td class="text-sm md:text-lg px-6 py-4">
+                {{ salario * utilidad | currency:'$':'symbol':'1.0-0' }}
+              </td>
+            </tr>
+            }
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>
