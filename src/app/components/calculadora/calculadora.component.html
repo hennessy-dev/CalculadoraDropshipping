@@ -1,41 +1,42 @@
-<div class="md:flex mx-4 mt-4 md:mx-10 md:my-10 flex-row md:flex-row mt-{143px}">
+<div class="lg:flex mx-4 mt-4 lg:mx-10 lg:my-10 flex-row lg:flex-row mt-{143px}">
 
   <div
-    class="md:mx-2 items-center basis-1/2 flex flex-row my-10 max-h-screen bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    class="md:mx-2 align-middle justify-center items-center basis-1/2 flex flex-col my-10  bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
-    <div>
+    <div class="flex flex-col items-center justify-self-center text-left ">
       <h1 class="font-bold mb-8 text-white">Datos del Producto</h1>
 
       <div class="mb-4">
-        <label class="block text-white text-sm font-bold mb-2" for="nombre">Producto</label>
+        <label class="block text-center text-white text-sm font-bold mb-2" for="nombre">Producto</label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none text-center border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="nombre" type="text" placeholder="Nombre" [(ngModel)]="nombre">
       </div>
 
       <div class="mb-4">
-        <label class="block text-white text-sm font-bold mb-2" for="precio">Precio de Venta</label>
+        <label class="block text-center text-white text-sm font-bold mb-2" for="precio">Precio de Venta</label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none text-center border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="number" id="precio" placeholder="" [(ngModel)]="precioProducto">
       </div>
 
       <div class="mb-4">
-        <label class="block text-white text-sm font-bold mb-2" for="precioProveedor">Precio de Proveedor</label>
+        <label class="block text-center text-white text-sm font-bold mb-2" for="precioProveedor">Precio de Proveedor</label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none text-center border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="number" id="precioProveedor" placeholder="precio de proveedor" [(ngModel)]="precioProveedor">
       </div>
 
       <div class="mb-4">
-        <label class="block text-white text-sm font-bold mb-2" for="valorFlete">Flete</label>
+        <label class="block text-center text-white text-sm font-bold mb-2" for="valorFlete">Flete</label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none text-center border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="number" id="valorFlete" placeholder="costo del flete" [(ngModel)]="flete">
       </div>
 
-      <button id="calcularBtn" class="bg-lime-500 text-white px-4 py-2 rounded"
-        (click)="calcularUtilidad()">Calcular</button>
+      <button id="calcularBtn" class="bg-lime-500 text-white px-4 py-2 rounded items-center"
+        (click)="calcularUtilidad()">Calcular
+      </button>
     </div>
 
     <!-- <div>
@@ -125,7 +126,7 @@ B
     </div>
 
 
-    <div class="container md:col-span-2">
+    <div class="md:col-span-2 flex items-center justify-center">
 
       <div class="relative overflow-x-auto shadow-md rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 ">
